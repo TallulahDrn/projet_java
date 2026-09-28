@@ -13,6 +13,7 @@ public class FenetreConnexion extends javax.swing.JFrame {
      */
     public FenetreConnexion() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(51, 51, 255));
         setLocationRelativeTo(null);                     // centre la fenêtre
         getRootPane().setDefaultButton(boutonConnexion); // la touche Entrée valide
     }
@@ -34,6 +35,7 @@ public class FenetreConnexion extends javax.swing.JFrame {
         boutonConnexion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Enregistrement des voyageurs");
@@ -59,9 +61,9 @@ public class FenetreConnexion extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(champMotDePasse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(champLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(champMotDePasse, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(champLogin)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(67, Short.MAX_VALUE)
                         .addComponent(jLabel1)
@@ -108,7 +110,7 @@ public class FenetreConnexion extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Bienvenue " + login + " !",
                         "Connexion réussie", JOptionPane.INFORMATION_MESSAGE);
                 dispose(); // ferme la fenêtre de connexion
-                // Étape suivante : ouvrir ici la fenêtre principale
+                new FenetrePrincipale().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Login ou mot de passe incorrect.",
                         "Erreur", JOptionPane.ERROR_MESSAGE);
